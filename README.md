@@ -46,30 +46,24 @@ Edit the following configuration variables in the script to match your environme
 Define the target OU in Active Directory:
 ```powershell
 $OU = "OU=Hosting,DC=ad,DC=domain,DC=com"
-
+```
 Email Settings
 Sender Email Address: Specify the sender email address for notifications.
-powershell
-Code kopieren
+```powershell
 $EmailSender = "no-reply@yourdomain.com"
+```
 SMTP Server Configuration: Set the SMTP server details.
-powershell
-Code kopieren
+```powershell
 $SmtpServer = "smtp.yourdomain.com"
 $SmtpPort = 587
+```
 Support Team Email Address: Provide a fallback email address for support.
-powershell
-Code kopieren
+```powershell
 $SupportEmail = "support@yourdomain.com"
-Usage
-Ensure the script has the necessary permissions to:
-
+```
 Query Active Directory.
 Send emails via the configured SMTP server.
 Update the configuration variables in the script to match your environment.
 
 Run the script using PowerShell:
-
-powershell
-Code kopieren
 .\PasswordExpiryNotification.ps1
