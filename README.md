@@ -20,7 +20,7 @@ This PowerShell script automates the process of notifying users and administrato
   - Expiration date
   - Days remaining until expiration
 - Supports **HTML-formatted** email bodies.
-- Adds custom headers (e.g., `X-Sophos-SPX-Encrypt`) for additional processing needs.
+
 
 ### **Organizational Unit Targeting**
 - Scans a specified Active Directory **Organizational Unit (OU)** and its sub-OUs for users.
@@ -47,3 +47,30 @@ Edit the following configuration variables in the script to match your environme
 Define the target OU in Active Directory:
 ```powershell
 $OU = "OU=Hosting,DC=ad,DC=domain,DC=com"
+
+Email Settings
+Sender Email Address: Specify the sender email address for notifications.
+powershell
+Code kopieren
+$EmailSender = "no-reply@yourdomain.com"
+SMTP Server Configuration: Set the SMTP server details.
+powershell
+Code kopieren
+$SmtpServer = "smtp.yourdomain.com"
+$SmtpPort = 587
+Support Team Email Address: Provide a fallback email address for support.
+powershell
+Code kopieren
+$SupportEmail = "support@yourdomain.com"
+Usage
+Ensure the script has the necessary permissions to:
+
+Query Active Directory.
+Send emails via the configured SMTP server.
+Update the configuration variables in the script to match your environment.
+
+Run the script using PowerShell:
+
+powershell
+Code kopieren
+.\PasswordExpiryNotification.ps1
