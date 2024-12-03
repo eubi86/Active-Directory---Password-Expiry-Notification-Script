@@ -65,5 +65,24 @@ Query Active Directory.
 Send emails via the configured SMTP server.
 Update the configuration variables in the script to match your environment.
 
+## Enable SSL if needed
+Add the -UseSsl parameter to the $smtpParams and $smtpParamsSupport hash tables.
+Same thing with Credential (if needed)
+$securePassword = ConvertTo-SecureString $SmtpPassword -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential($SmtpUsername, $securePassword)
+
+$smtpParams = @{
+    'SmtpServer'  = $SmtpServer
+    'Port'        = $SmtpPort
+    'From'        = $EmailSender
+    'To'          = $verantwortlicherEmail
+    'Subject'     = "Password Expiry Notification: User password expiring in $daysToExpiry days"
+    'Body'        = $htmlBody
+    'BodyAsHtml'  = $true
+    'Headers'     = @{'X-Sophos-SPX-Encrypt' = $spxHeader}
+    'UseSsl'      = $true  # Enable SSL/TLS for the SMTP connection
+    'Credential'  = $credential
+}
+
 Run the script using PowerShell:
 .\PasswordExpiryNotification.ps1
