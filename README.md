@@ -1,4 +1,3 @@
-# Active-Directory---Password-Expiry-Notification-Script
 # Active Directory Password Expiry Notification Script
 
 This PowerShell script automates the process of notifying users and administrators about upcoming Active Directory password expirations. Designed for environments with structured Organizational Units (OUs), it sends email alerts to responsible individuals (based on an `extensionAttribute15` value) or the support team when a user's password is about to expire. The script helps organizations proactively manage password expirations and ensure seamless access for users.
