@@ -81,7 +81,6 @@ $smtpParams = @{
     'Subject'     = "Password Expiry Notification: User password expiring in $daysToExpiry days"
     'Body'        = $htmlBody
     'BodyAsHtml'  = $true
-    'Headers'     = @{'X-Sophos-SPX-Encrypt' = $spxHeader}
     'UseSsl'      = $true  # Enable SSL/TLS for the SMTP connection
     'Credential'  = $credential
 }
