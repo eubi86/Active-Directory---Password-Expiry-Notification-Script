@@ -68,6 +68,8 @@ Update the configuration variables in the script to match your environment.
 ## Enable SSL if needed
 Add the -UseSsl parameter to the $smtpParams and $smtpParamsSupport hash tables.
 Same thing with Credential (if needed)
+
+```powershell
 $securePassword = ConvertTo-SecureString $SmtpPassword -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential($SmtpUsername, $securePassword)
 
@@ -83,6 +85,6 @@ $smtpParams = @{
     'UseSsl'      = $true  # Enable SSL/TLS for the SMTP connection
     'Credential'  = $credential
 }
-
+```
 Run the script using PowerShell:
 .\PasswordExpiryNotification.ps1
